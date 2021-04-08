@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1584205420 source:d:\documents\yandex d\documents\c++files\lab_2\lab_2\main.cpp
+	<iostream>
+
+1617888056 source:d:\documents\yandex d\documents\c++files\lab_2\lab_2\src\sequence.cpp
+	"Sequence.h"
+
+1617888040 d:\documents\yandex d\documents\c++files\lab_2\lab_2\include\sequence.h
+
+1617894690 source:d:\documents\yandex d\documents\c++files\lab_2\lab_2\src\linkedlist.cpp
+	"LinkedList.h"
+
+1617894558 d:\documents\yandex d\documents\c++files\lab_2\lab_2\include\linkedlist.h
+
