@@ -1,14 +1,33 @@
 # depslib dependency file v1.0
-1584205420 source:d:\documents\yandex d\documents\c++files\lab_2\lab_2\main.cpp
+1618093668 source:d:\documents\yandex d\documents\c++files\lab_2\lab_2\main.cpp
 	<iostream>
-
-1617888056 source:d:\documents\yandex d\documents\c++files\lab_2\lab_2\src\sequence.cpp
-	"Sequence.h"
-
-1617888040 d:\documents\yandex d\documents\c++files\lab_2\lab_2\include\sequence.h
-
-1617894690 source:d:\documents\yandex d\documents\c++files\lab_2\lab_2\src\linkedlist.cpp
 	"LinkedList.h"
 
-1617894558 d:\documents\yandex d\documents\c++files\lab_2\lab_2\include\linkedlist.h
+1617896014 source:d:\documents\yandex d\documents\c++files\lab_2\lab_2\src\sequence.cpp
+	"Sequence.h"
+
+1617896014 d:\documents\yandex d\documents\c++files\lab_2\lab_2\include\sequence.h
+
+1618088474 source:d:\documents\yandex d\documents\c++files\lab_2\lab_2\src\linkedlist.cpp
+	"LinkedList.h"
+
+1618094072 d:\documents\yandex d\documents\c++files\lab_2\lab_2\include\linkedlist.h
+	<iostream>
+
+1617896014 source:d:\documents\yandex d\documents\c++files\lab_2\lab_2\src\linkedlistsequence.cpp
+	"LinkedListSequence.h"
+
+1617896014 d:\documents\yandex d\documents\c++files\lab_2\lab_2\include\linkedlistsequence.h
+	"SEQUENCE.H"
+	"LinkedList.h"
+
+1618084664 source:d:\documents\yandex d\documents\c++files\lab_2\lab_2\src\arraysequence.cpp
+	"ArraySequence.h"
+
+1618084664 d:\documents\yandex d\documents\c++files\lab_2\lab_2\include\arraysequence.h
+
+1618084628 source:d:\documents\yandex d\documents\c++files\lab_2\lab_2\src\dynamicarray.cpp
+	"DynamicArray.h"
+
+1618085184 d:\documents\yandex d\documents\c++files\lab_2\lab_2\include\dynamicarray.h
 

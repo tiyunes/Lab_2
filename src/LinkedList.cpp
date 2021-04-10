@@ -1,6 +1,8 @@
+
 #include "LinkedList.h"
 
-template<class T>
+
+/*template<class T>
 void LinkedList<T>::Append(T item)
 {
     if(this->first == nullptr)
@@ -9,6 +11,7 @@ void LinkedList<T>::Append(T item)
     }
     else
     {
+
         Node<T> *temp = this->first;
         while(temp->next != nullptr)
         {
@@ -135,3 +138,4 @@ LinkedList<T>* LinkedList<T>::Concat(LinkedList<T> *l)
     }
     return concatList;
 }
+*/
