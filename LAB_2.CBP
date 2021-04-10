@@ -34,11 +34,14 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="include/ArraySequence.h" />
+		<Unit filename="include/DynamicArray.h" />
 		<Unit filename="include/LinkedList.h" />
 		<Unit filename="include/LinkedListSequence.h" />
 		<Unit filename="include/SEQUENCE.H" />
 		<Unit filename="main.cpp" />
-		<Unit filename="src/LinkedList.cpp" />
+		<Unit filename="src/ArraySequence.cpp" />
+		<Unit filename="src/DynamicArray.cpp" />
 		<Unit filename="src/LinkedListSequence.cpp" />
 		<Unit filename="src/SEQUENCE.CPP" />
 		<Extensions>
