@@ -1,5 +1,5 @@
 #include "ArraySequence.h"
-
+/*
 ArraySequence::ArraySequence()
 {
     //ctor
@@ -14,3 +14,4 @@ ArraySequence::ArraySequence(const ArraySequence& other)
 {
     //copy ctor
 }
+*/

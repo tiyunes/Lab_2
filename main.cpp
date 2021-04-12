@@ -1,21 +1,17 @@
 #include <iostream>
 #include "LinkedList.h"
+#include "LinkedListSequence.h"
+#include "DynamicArray.h"
+#include "ArraySequence.h"
 
 using namespace std;
 
 int main()
 {
-    int i;
-    LinkedList<int> a{};
-    a.Append(5);
-    a.Prepend(1);
-    a.InsertAt(6, 1);
-    LinkedList<int>* b = a.GetSubList(0, 0);
-    LinkedList<int> c(a);
-    LinkedList<int>* d = c.Concat(b);
-    for (i = 0; i < d->GetLength(); i++)
-    {
-        cout << d->Get(i) << endl;
-    }
+    int c[2]{9, 1};
+    DynamicArray<int>* a = new DynamicArray<int>(2);
+    a->Set(0, 5);
+    a->Set(1, 6);
+
     return 0;
 }

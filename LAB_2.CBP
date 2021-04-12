@@ -40,9 +40,6 @@
 		<Unit filename="include/LinkedListSequence.h" />
 		<Unit filename="include/SEQUENCE.H" />
 		<Unit filename="main.cpp" />
-		<Unit filename="src/ArraySequence.cpp" />
-		<Unit filename="src/DynamicArray.cpp" />
-		<Unit filename="src/LinkedListSequence.cpp" />
 		<Unit filename="src/SEQUENCE.CPP" />
 		<Extensions>
 			<lib_finder disable_auto="1" />

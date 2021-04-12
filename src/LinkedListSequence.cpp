@@ -1,4 +1,4 @@
-#include "LinkedListSequence.h"
+/*#include "LinkedListSequence.h"
 
 template<class T>
 void LinkedListSequence<T>::Append(T item)
@@ -16,9 +16,9 @@ LinkedListSequence<T>::LinkedListSequence()
 template<class T>
 LinkedListSequence<T>::LinkedListSequence(const LinkedList<T>& l)
 {
-    this->items->Size = l->Size;
+    this->items->Size = l.Size;
     this->items->first = new T;
-    this->items->first = l->first;
+    this->items->first = l.first;
 }
 
 template<class T>
@@ -68,9 +68,4 @@ Sequence<T>* LinkedListSequence<T>::Concat(Sequence<T> *l)
 {
     return this->items->Concat(l);
 }
-
-template<class T>
-LinkedListSequence<T>::~LinkedListSequence()
-{
-    //dtor
-}
+*/

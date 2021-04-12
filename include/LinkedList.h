@@ -3,7 +3,6 @@
 #include <iostream>
 
 using namespace std;
-
 template<class T>
 class Node
 {
@@ -138,7 +137,6 @@ public:
     {
         Node<T>* n = this->first;
         LinkedList<T>* concatList = new LinkedList<T>(*l);
-        //concatList = LinkedList<T>(*l);
         for (int i = 0; i < this->Size; i++)
         {
             concatList->Append(n->value);
@@ -161,7 +159,7 @@ public:
         }
     }
 
-private:
+public:
     int Size;
     Node<T> *first;
 };
