@@ -1,9 +1,10 @@
 #include "SEQUENCE.H"
 #include "LinkedList.h"
+//#include "LinkedList.cpp"
 #ifndef LINKEDLISTSEQUENCE_H
 #define LINKEDLISTSEQUENCE_H
 
-template<class T>
+template <class T>
 class LinkedListSequence: public Sequence<T>
 {
     public:
@@ -11,18 +12,17 @@ class LinkedListSequence: public Sequence<T>
 
         LinkedListSequence()
         {
-            this->items->first = nullptr;
-            this->items->Size = 0;
+            this->items = new LinkedList<T>();
         }
         LinkedListSequence(T* items, int c)
         {
             this->items = new LinkedList<T>(items, c);
-            this->items->Size = c;
         }
         LinkedListSequence(const LinkedList<T>& l)
         {
-             this->items = new LinkedList<T>(l);
+            this->items = new LinkedList<T>(l);
         }
+
         T GetFirst() override
         {
             return this->items->GetFirst();
@@ -35,15 +35,10 @@ class LinkedListSequence: public Sequence<T>
         {
             return this->items->Get(index);
         }
-        LinkedList<T>* GetSubsequence(int startIndex, int endIndex)
-        {
-            return this->items->GetSubList(startIndex, endIndex);
-        }
         int GetLength() override
         {
             return this->items->GetLength();
         }
-
         void Append(T item) override
         {
             this->items->Append(item);
@@ -56,9 +51,20 @@ class LinkedListSequence: public Sequence<T>
         {
             this->items->InsertAt(item, index);
         }
-        LinkedList<T>* Concat(LinkedList <T> *l)
+        void Pop() override
         {
-            return this->items->Concat(l);
+            return this->items->Pop();
+        }
+        Sequence<T>* GetSubsequence(int startIndex, int endIndex) override
+        {
+            LinkedListSequence<T>* subList = new LinkedListSequence<T>(*(this->items->GetSubList(startIndex, endIndex)));
+            subList->items->Size = endIndex - startIndex + 1;
+            return subList;
+        }
+        Sequence<T>* Concat(LinkedList <T> *l) override
+        {
+            LinkedListSequence<T>* concatList = new LinkedListSequence<T>(*(this->items->Concat(l)));
+            return concatList;
         }
     protected:
 
@@ -67,3 +73,4 @@ class LinkedListSequence: public Sequence<T>
 };
 
 #endif // LINKEDLISTSEQUENCE_H
+
