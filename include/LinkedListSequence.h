@@ -18,6 +18,7 @@ class LinkedListSequence: public Sequence<T>
         {
             this->items = new LinkedList<T>(items, c);
         }
+
         LinkedListSequence(const LinkedList<T>& l)
         {
             this->items = new LinkedList<T>(l);
@@ -55,16 +56,35 @@ class LinkedListSequence: public Sequence<T>
         {
             return this->items->Pop();
         }
+        void Reverse() override
+        {
+            return this->items->Reverse();
+        }
         Sequence<T>* GetSubsequence(int startIndex, int endIndex) override
         {
             LinkedListSequence<T>* subList = new LinkedListSequence<T>(*(this->items->GetSubList(startIndex, endIndex)));
             subList->items->Size = endIndex - startIndex + 1;
             return subList;
         }
-        Sequence<T>* Concat(LinkedList <T> *l) override
+        Sequence<T>* Concat(Sequence <T> *l) override
         {
-            LinkedListSequence<T>* concatList = new LinkedListSequence<T>(*(this->items->Concat(l)));
-            return concatList;
+            Sequence<T>* concatSequence = (Sequence<T>*)new LinkedListSequence<T>();
+            for (int i = 0; i < this->GetLength(); i++)
+            {
+                concatSequence->Append(this->Get(i));
+            }
+            for (int i = 0; i < l->GetLength(); i++)
+            {
+                concatSequence->Append(l->Get(i));
+            }
+            return concatSequence;
+        }
+        ~LinkedListSequence()
+        {
+            for (int i = 0; i < this->GetLength(); i++)
+            {
+                this->items->Pop();
+            }
         }
     protected:
 

@@ -5,54 +5,64 @@ template<class T>
 class DynamicArray
 {
     public:
-        DynamicArray(T* items, int c);
-        DynamicArray(int size);
+        DynamicArray();
+        DynamicArray(T* items, int Size);
+        DynamicArray(int Size);
         DynamicArray(const DynamicArray<T>& dynamicArray);
 
         T Get(int index);
         int GetSize();
         T& operator[] (int index);
+        void Pop();
+        void Reverse();
 
         void Set(int index, T value);
         void Resize(int newSize);
+        void ChangeSize(int newSize);
+        ~DynamicArray();
 
     protected:
 
     public:
         T* values;
-        int size;
+        int Size;
 };
 
 template<class T>
-DynamicArray<T>::DynamicArray(int size)
+DynamicArray<T>::DynamicArray()
 {
-    this->values = new T[size];
-    for (int i = 0; i < size; i++)
-    {
-        this->values[i] = 0;
-    }
-    this->size = size;
+    this->values = new T[0];
+    this->Size = 0;
 }
 
 template<class T>
-DynamicArray<T>::DynamicArray(T* items, int c)
+DynamicArray<T>::DynamicArray(int Size)
 {
-    DynamicArray<T> temp(c);
-    this->values = new T[c];
-    for (int i = 0; i < c; i++)
+    this->values = new T[Size];
+    for (int i = 0; i < Size; i++)
     {
-        temp.Set(i, items[i]);
+        this->values[i] = 0;
     }
-    this->values = temp.values;
-    this->size = c;
+    this->Size = Size;
+}
+
+template<class T>
+DynamicArray<T>::DynamicArray(T* items, int Size)
+{
+    this->values = new T[Size];
+    for (int i = 0; i < Size; i++)
+    {
+        this->values[i] = items[i];
+    }
+    this->Size = Size;
 }
 
 template<class T>
 DynamicArray<T>::DynamicArray(const DynamicArray<T>& dynamicArray)
 {
-    this->size = dynamicArray.size;
-    this->values = new T[dynamicArray.size];
-    for (int i = 0; i < dynamicArray.size; i++)
+    this->Size = dynamicArray.Size;
+    this->values = new T[dynamicArray.Size];
+    for (int i = 0; i < dynamicArray.Size; i++)
     {
         this->values[i] = dynamicArray.values[i];
     }
@@ -61,7 +71,7 @@ DynamicArray<T>::DynamicArray(const DynamicArray<T>& dynamicArray)
 template<class T>
 T DynamicArray<T>::Get(int index)
 {
-    if (index < 0 || index >= this->GetSize())
+    if (index < 0 || index > this->GetSize())
     {
         throw std::out_of_range("Invalid index");
     }
@@ -71,7 +81,7 @@ T DynamicArray<T>::Get(int index)
 template<class T>
 int DynamicArray<T>::GetSize()
 {
-    return this->size;
+    return this->Size;
 }
 
 template<class T>
@@ -83,7 +93,7 @@ T& DynamicArray<T>::operator[](int index)
 template<class T>
 void DynamicArray<T>::Set(int index, T value)
 {
-    if (index < 0 || index >= this->GetSize())
+    if (index < 0 || index > this->GetSize())
     {
         throw std::out_of_range("Invalid index");
     }
@@ -94,21 +104,73 @@ template<class T>
 void DynamicArray<T>::Resize(int newSize)
 {
     int i;
-    int *newValues = new T[newSize];
+    T *newValues = new T[newSize];
     for (i = 0; i < newSize; i++)
     {
-        newValues[i] = this->values[i];
+        newValues[i] = this->Get(i);
     }
-    if (newSize > this->size)
+    if (newSize > this->Size)
     {
-        for (int j = newSize; j < this->size; j++)
+        for (int j = newSize; j < this->Size; j++)
         {
             newValues[j] = 0;
         }
     }
-    delete[]this->values;
-    this->values = newValues;
-    this->size = newSize;
+    this->Size = newSize;
+    for (i = 0; i < newSize; i++)
+    {
+        this->values[i] = newValues[i];
+    }
+}
+
+template<class T>
+void DynamicArray<T>::ChangeSize(int newSize)
+{
+    this->Size = newSize;
+}
+
+template<class T>
+void DynamicArray<T>::Pop()
+{
+    T *newValues = new T[this->Size - 1];
+    cout << this->Size << endl;
+    if (this->Size - 1 != 0)
+    {
+        for (int i = 0; i < this->Size - 1; i++)
+        {
+            newValues[i] = this->Get(i + 1);
+            cout<<newValues[i]<<endl;
+        }
+        this->ChangeSize(this->Size - 1);
+        for (int j = 0; j < this->Size; j++)
+        {
+            this->values[j] = newValues[j];
+        }
+    }
+    else if (this->Size == 1)
+    {
+        this->ChangeSize(0);
+        cout<<this->GetSize()<<endl;
+        this->values = new T[0];
+    }
+
+}
+
+template<class T>
+void DynamicArray<T>::Reverse()
+{
+    T buff;
+    for (int i = 0; i < (this->GetSize() / 2); i++)
+    {
+        buff = this->Get(i);
+        this->values[i] = this->Get(this->GetSize() - i - 1);
+        this->values[this->GetSize() - i - 1] = buff;
+    }
+}
+template<class T>
+DynamicArray<T>::~DynamicArray()
+{
+    delete[] values;
 }
 
 #endif // DYNAMICARRAY_H

@@ -34,6 +34,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="doctest/doctest/doctest.h" />
 		<Unit filename="include/ArraySequence.h" />
 		<Unit filename="include/DynamicArray.h" />
 		<Unit filename="include/LinkedList.h" />
@@ -41,12 +42,15 @@
 		<Unit filename="include/QUEUE.h" />
 		<Unit filename="include/SEQUENCE.h" />
 		<Unit filename="include/STACK.H" />
+		<Unit filename="include/VECTOR.H" />
+		<Unit filename="include/doctest.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/ArraySequence.cpp" />
 		<Unit filename="src/DynamicArray.cpp" />
 		<Unit filename="src/LinkedList.cpp" />
 		<Unit filename="src/SEQUENCE.cpp" />
 		<Unit filename="src/STACK.CPP" />
+		<Unit filename="src/VECTOR.CPP" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

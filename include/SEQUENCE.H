@@ -18,17 +18,7 @@ class Sequence
         virtual void Prepend(T item) = 0;
         virtual void InsertAt(T item, int index) = 0;
         virtual void Pop() = 0;
-        virtual Sequence<T>* Concat(LinkedList <T> *l) = 0;
-    /*protected:
-        Sequence(T* items, int size)
-        {
-            this->arrayItems = new ArraySequence<T>(items, size);
-            this->listItems = new LinkedListSequence<T>(items, size);
-        }
-
-    private:
-        LinkedListSequence<T>* listItems;
-        ArraySequence<T>* arrayItems;
-    */
+        virtual void Reverse() = 0;
+        virtual Sequence<T>* Concat(Sequence<T> *l) = 0;
 };
 #endif // SEQUENCE_H

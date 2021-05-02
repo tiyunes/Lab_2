@@ -22,14 +22,6 @@ class LinkedList
 {
 public:
     friend class Node<T>;
-    LinkedList(T* items, int c)
-    {
-        Size = c;
-        for (int i = 0; i < c; i++)
-        {
-            Append(*(items + i));
-        }
-    }
     LinkedList()
     {
         Size = 0;
@@ -43,6 +35,17 @@ public:
         first = new Node<T>(0, nullptr);
         first = l.first;
         last = l.last;
+    }
+
+    LinkedList(T* items, int c)
+    {
+        this->first = nullptr;
+        this->last = nullptr;
+        this->Size = 0;
+        for (int i = 0; i < c; i++)
+        {
+            this->Append(items[i]);
+        }
     }
 
     T GetFirst()
@@ -149,6 +152,7 @@ public:
         }
         this->Size++;
     }
+
     void Prepend(T item)
     {
         if (this->Size == 0)
@@ -164,20 +168,21 @@ public:
     }
     void InsertAt(T item, int index)
     {
-        if (index < 0 || index >= this->Size)
+        if (index < 0 || index > this->Size)
         {
             throw std::out_of_range("Invalid index");
         }
         if (index == 0)
         {
-            Prepend(item);
+            this->Prepend(item);
         }
         if (index == this->Size - 1)
         {
-            Append(item);
+            this->Append(item);
         }
         else
         {
+            cout<<"Ok"<<endl;
             Node<T> *oldNode = this->first;
             for (int i = 0; i < index - 1; i++)
             {
@@ -185,8 +190,23 @@ public:
             }
             Node<T>* newNode = new Node<T>(item, oldNode->next);
             oldNode->next = newNode;
-            Size++;
+            this->Size++;
         }
+    }
+    void Reverse()
+    {
+        T buff;
+        LinkedList<T>* l = new LinkedList();
+        for (int i = 0; i < (this->GetLength() / 2); i++)
+        {
+            buff = this->Get(i);
+            cout<<buff<<endl;
+            cout<<l->GetLength()<<endl;
+            l->InsertAt(this->Get(this->GetLength() - i - 1), i);
+            l->InsertAt(buff, this->GetLength() - i - 1);
+        }
+        this->first = l->first;
+        this->last = l->last;
     }
     LinkedList<T>* Concat(LinkedList<T> *l)
     {
@@ -198,6 +218,13 @@ public:
             n = n->next;
         }
         return concatList;
+    }
+    ~LinkedList()
+    {
+     for (int i = 0; i < this->Size; i++)
+     {
+         this->Pop();
+     }
     }
 
 
