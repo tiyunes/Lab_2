@@ -9,11 +9,14 @@ class Stack
     public:
         Stack()
         {
-            elements = (Sequence<T>*) new LinkedListSequence<T>;
+            //this->elements = (Sequence<T>*) new LinkedListSequence<T>;
+            this->elements = (Sequence<T>*) new ArraySequence<T>;
         }
-        Stack(const Stack& other)
+        Stack(T* items, int size)
         {
-            elements = (Sequence<T>*) new LinkedListSequence<T>(other->elements);
+            //this->elements = (Sequence<T>*) new LinkedListSequence<T>(items, size);
+            this->elements = (Sequence<T>*) new ArraySequence<T>(items, size);
+            this->elements->Reverse();
         }
         T top()
         {
@@ -26,7 +29,7 @@ class Stack
         }
         int size()
         {
-            return this->elements->GetLength;
+            return this->elements->GetLength();
         }
         void push(T item)
         {

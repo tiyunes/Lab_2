@@ -12,15 +12,18 @@ class Queue
         Queue()
         {
             elements = (Sequence<T>*) new LinkedListSequence<T>;
+            //elements = (Sequence<T>*) new ArraySequence<T>;
         }
         Queue(const int foo)
         {
             elements = (Sequence<T>*) new LinkedListSequence<T>;
+            //elements = (Sequence<T>*) new ArraySequence<T>;
             _foo = foo;
         }
-        Queue(const Queue& other)
+        Queue(T* items, int size)
         {
-            elements = (Sequence<T>*) new LinkedListSequence<T>(other->elements);
+            this->elements = (Sequence<T>*) new LinkedListSequence<T>(items, size);
+            //this->elements = (Sequence<T>*) new ArraySequence<T>(items, size);
         }
         T front()
         {
@@ -37,7 +40,7 @@ class Queue
         }
         int size()
         {
-            return this->elements->GetLength;
+            return this->elements->GetLength();
         }
         void push(T item)
         {
