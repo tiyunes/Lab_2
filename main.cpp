@@ -130,7 +130,7 @@ TEST_CASE("testing Vector")
         CHECK(v1->Mult(2)->GetCoordinate(3) == 4);
         CHECK(v1->Mult(2)->GetCoordinate(4) == 16);
 
-        CHECK(v2->ScalarProd(v1)== 102);
+        CHECK(v2->ScalarProd(v1) == 102);
 
         float items3[2] = {3, 4};
         Vector<float>* v3 = new Vector<float>(items3, 2);
