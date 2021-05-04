@@ -17,7 +17,7 @@ public:
         this->elements = (Sequence<T>*) new LinkedListSequence<T>(items, size);
         //this->elements = (Sequence<T>*) new ArraySequence<T>(items, size);
     }
-    T front() //0.316 s (List) and 0.298 s (Array) for 1M iterations
+    T front() //0.316 s (List) and 0.297 s (Array) for 1M iterations
     {
         return this->elements->GetFirst();
     }
