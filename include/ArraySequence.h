@@ -7,29 +7,30 @@
 template<class T>
 class ArraySequence: public Sequence<T>
 {
-    public:
-        friend class DynamicArray<T>;
+public:
+    friend class DynamicArray<T>;
 
-        ArraySequence();
-        ArraySequence(int Size);
-        ArraySequence(T* items, int c);
-        ArraySequence(const DynamicArray<T>& dynamicArray);
+    ArraySequence();
+    ArraySequence(int Size);
+    ArraySequence(T* items, int c);
+    ArraySequence(const DynamicArray<T>& dynamicArray);
+    ArraySequence(const ArraySequence<T>& arraySequence);
 
-        T GetFirst() override;
-        T GetLast() override;
-        T Get(int index) override;
-        int GetLength() override;
-        void Pop() override;
+    T GetFirst() override;
+    T GetLast() override;
+    T Get(int index) override;
+    int GetLength() override;
+    void Pop() override;
 
-        void Append(T item) override;
-        void Prepend(T item) override;
-        void InsertAt(T item, int index) override;
-        void Reverse() override;
-        Sequence<T>* GetSubsequence(int startIndex, int endIndex) override;
-        Sequence<T>* Concat(Sequence<T> *l) override;
-        ~ArraySequence();
-    private:
-        DynamicArray<T>* items;
+    void Append(T item) override;
+    void Prepend(T item) override;
+    void InsertAt(T item, int index) override;
+    void Reverse() override;
+    Sequence<T>* GetSubsequence(int startIndex, int endIndex) override;
+    Sequence<T>* Concat(Sequence<T> *l) override;
+    ~ArraySequence();
+private:
+    DynamicArray<T>* items;
 };
 
 template<class T>
@@ -54,6 +55,12 @@ template<class T>
 ArraySequence<T>::ArraySequence(const DynamicArray<T>& dynamicArray)
 {
     this->items = new DynamicArray<T>(dynamicArray);
+}
+
+template<class T>
+ArraySequence<T>::ArraySequence(const ArraySequence<T>& arraySequence)
+{
+    this->items = new DynamicArray<T>(arraySequence.items);
 }
 
 template<class T>
@@ -83,8 +90,8 @@ int ArraySequence<T>::GetLength()
 template<class T>
 void ArraySequence<T>::Append(T item)
 {
-    this->items->Resize(this->items->Size + 1);
-    this->items->Set(this->items->Size - 1, item);
+    this->items->Resize(this->items->GetSize() + 1);
+    this->items->Set(this->items->GetSize() - 1, item);
 }
 
 template<class T>
@@ -93,16 +100,16 @@ void ArraySequence<T>::Prepend(T item)
     if (this->GetLength() != 0)
     {
         DynamicArray<T>* buff = new DynamicArray<T>(this->GetLength());
-        for (int j = 0; j < buff->GetSize(); j++)
+        for (int j = 0; j < this->GetLength(); j++)
         {
             buff->values[j] = this->Get(j);
         }
-        this->items->ChangeSize(this->items->Size + 1);
+        this->items->Size++;
+        this->items = new DynamicArray<T>(this->items->Size);
         this->items->Set(0, item);
         for (int i = 1; i < this->GetLength(); i++)
         {
             this->items->Set(i, buff->Get(i - 1));
-            cout << this->Get(i) << endl;
         }
     }
     else
@@ -110,7 +117,6 @@ void ArraySequence<T>::Prepend(T item)
         this->items->Set(0, item);
         this->items->Size++;
     }
-    cout << " " << endl;
 }
 
 template<class T>
@@ -171,7 +177,7 @@ Sequence<T>* ArraySequence<T>::Concat(Sequence <T> *l)
 template<class T>
 ArraySequence<T>::~ArraySequence()
 {
-    ~(this->items);
+    delete[] this->items;
 }
 
 

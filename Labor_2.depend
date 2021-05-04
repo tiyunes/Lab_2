@@ -3,51 +3,55 @@
 	<stdexcept>
 	"DynamicArray.h"
 
-1619995780 d:\documents\yandex d\documents\c++files\lab_2\labor_2\include\dynamicarray.h
+1620141968 d:\documents\yandex d\documents\c++files\lab_2\labor_2\include\dynamicarray.h
 
 1619465232 source:d:\documents\yandex d\documents\c++files\lab_2\labor_2\src\linkedlist.cpp
 	"LinkedList.h"
 
-1619976056 d:\documents\yandex d\documents\c++files\lab_2\labor_2\include\linkedlist.h
+1620141936 d:\documents\yandex d\documents\c++files\lab_2\labor_2\include\linkedlist.h
 	<stdexcept>
 	<iostream>
 
 1619465354 source:d:\documents\yandex d\documents\c++files\lab_2\labor_2\src\sequence.cpp
 	"SEQUENCE.h"
 
-1619971932 d:\documents\yandex d\documents\c++files\lab_2\labor_2\include\sequence.h
+1620141882 d:\documents\yandex d\documents\c++files\lab_2\labor_2\include\sequence.h
 	"LinkedList.h"
 	"DynamicArray.h"
 
-1619966508 source:d:\documents\yandex d\documents\c++files\lab_2\labor_2\src\arraysequence.cpp
+1619996754 source:d:\documents\yandex d\documents\c++files\lab_2\labor_2\src\arraysequence.cpp
 
-1619992530 d:\documents\yandex d\documents\c++files\lab_2\labor_2\include\arraysequence.h
+1620141996 d:\documents\yandex d\documents\c++files\lab_2\labor_2\include\arraysequence.h
 	"SEQUENCE.H"
 	"DynamicArray.h"
 
-1619993450 source:d:\documents\yandex d\documents\c++files\lab_2\labor_2\main.cpp
+1620143276 source:d:\documents\yandex d\documents\c++files\lab_2\labor_2\main.cpp
 	<iostream>
 	<stdexcept>
+	<cmath>
+	<chrono>
 	"QUEUE.H"
 	"Stack.h"
 	"doctest.h"
+	"VECTOR.H"
 
-1619970502 d:\documents\yandex d\documents\c++files\lab_2\labor_2\include\queue.h
+1620137392 d:\documents\yandex d\documents\c++files\lab_2\labor_2\include\queue.h
 	"ArraySequence.h"
 	"LinkedListSequence.h"
 
-1619975270 d:\documents\yandex d\documents\c++files\lab_2\labor_2\include\linkedlistsequence.h
+1620141904 d:\documents\yandex d\documents\c++files\lab_2\labor_2\include\linkedlistsequence.h
 	"SEQUENCE.H"
 	"LinkedList.h"
 
 1619468644 source:d:\documents\yandex d\documents\c++files\lab_2\labor_2\src\stack.cpp
 	"Stack.h"
 
-1619976664 d:\documents\yandex d\documents\c++files\lab_2\labor_2\include\stack.h
+1620141858 d:\documents\yandex d\documents\c++files\lab_2\labor_2\include\stack.h
 	"ArraySequence.h"
 	"LinkedListSequence.h"
 
-1619963782 d:\documents\yandex d\documents\c++files\lab_2\labor_2\include\doctest.h
+1620144684 d:\documents\yandex d\documents\c++files\lab_2\labor_2\include\doctest.h
+	"VECTOR.H"
 	<signal.h>
 	<iosfwd>
 	<cstddef>
@@ -90,8 +94,16 @@
 	<sys/time.h>
 	<unistd.h>
 
-1619976496 source:d:\documents\yandex d\documents\c++files\lab_2\labor_2\src\vector.cpp
+1620069794 source:d:\documents\yandex d\documents\c++files\lab_2\labor_2\src\vector.cpp
 	"Vector.h"
 
-1619976496 d:\documents\yandex d\documents\c++files\lab_2\labor_2\include\vector.h
+1620136334 d:\documents\yandex d\documents\c++files\lab_2\labor_2\include\vector.h
+	"ArraySequence.h"
+	"LinkedListSequence.h"
+	<cmath>
+
+1620064780 source:d:\documents\yandex d\documents\c++files\lab_2\labor_2\src\complex.cpp
+	"Complex.h"
+
+1620066140 d:\documents\yandex d\documents\c++files\lab_2\labor_2\include\complex.h
 

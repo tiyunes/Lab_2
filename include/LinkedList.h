@@ -7,14 +7,14 @@ using namespace std;
 template<class T>
 class Node
 {
-    public:
-        Node(T value, Node *next = nullptr)
-        {
-            this->value = value;
-            this->next = next;
-        }
-        Node* next;
-        T value;
+public:
+    Node(T value, Node *next = nullptr)
+    {
+        this->value = value;
+        this->next = next;
+    }
+    Node* next;
+    T value;
 };
 
 template<class T>
@@ -48,6 +48,17 @@ public:
         }
     }
 
+    LinkedList(int c)
+    {
+        this->first = nullptr;
+        this->last = nullptr;
+        this->Size = 0;
+        for (int i = 0; i < c; i++)
+        {
+            this->Append(0);
+        }
+    }
+
     T GetFirst()
     {
         if (this->Size == 0)
@@ -75,7 +86,7 @@ public:
     }
     T Get(int index)
     {
-        if (index < 0 || index >= this->Size)
+        if (index < 0 || index > this->Size)
         {
             throw std::out_of_range("Invalid index");
         }
@@ -89,7 +100,8 @@ public:
 
     void Pop()
     {
-        Node<T> *buff = this->first;
+        Node<T> *buff = new Node<T>(0, nullptr);
+        buff = this->first;
         this->first = this->first->next;
         delete buff;
         this->Size--;
@@ -127,6 +139,21 @@ public:
             if(c == index)
             {
                 return temp->value;
+            }
+            temp = temp->next;
+            c++;
+        }
+    }
+
+    void Set(T item, int index)
+    {
+        int c = 0;
+        Node<T>* temp = this->first;
+        while (temp!=nullptr)
+        {
+            if(c == index)
+            {
+                temp->value = item;
             }
             temp = temp->next;
             c++;
@@ -182,7 +209,6 @@ public:
         }
         else
         {
-            cout<<"Ok"<<endl;
             Node<T> *oldNode = this->first;
             for (int i = 0; i < index - 1; i++)
             {
@@ -196,14 +222,12 @@ public:
     void Reverse()
     {
         T buff;
-        LinkedList<T>* l = new LinkedList();
+        LinkedList<T>* l = new LinkedList(this->GetLength());
         for (int i = 0; i < (this->GetLength() / 2); i++)
         {
             buff = this->Get(i);
-            cout<<buff<<endl;
-            cout<<l->GetLength()<<endl;
-            l->InsertAt(this->Get(this->GetLength() - i - 1), i);
-            l->InsertAt(buff, this->GetLength() - i - 1);
+            l->Set(this->Get(this->GetLength() - i - 1), i);
+            l->Set(buff, this->GetLength() - i - 1);
         }
         this->first = l->first;
         this->last = l->last;
