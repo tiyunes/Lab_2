@@ -84,6 +84,7 @@ public:
         */
         return l->value;
     }
+    
     T Get(int index)
     {
         if (index < 0 || index > this->Size)
