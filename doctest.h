@@ -6581,12 +6581,12 @@ int main(int argc, char** argv)
         {
             cout << "Enter the element of queue: " << endl;
             cin >> element;
-            q1->push(element);
+            q1->Push(element);
         }
         cout << "1st queue is ready" << endl;
         cout << "Length of 1st queue: " << qLength1 << endl;
-        cout << "Front element of 1st queue: " << q1->front() << endl;
-        cout << "Back element of 1st queue: " << q1->back() << endl;
+        cout << "Front element of 1st queue: " << q1->Front() << endl;
+        cout << "Back element of 1st queue: " << q1->Back() << endl;
         cout << " " << endl;
 
         cout << "Enter the length of 2nd queue: " << endl;
@@ -6596,16 +6596,16 @@ int main(int argc, char** argv)
         {
             cout << "Enter the element of 2nd queue: " << endl;
             cin >> element;
-            q2->push(element);
+            q2->Push(element);
         }
         cout << "2nd queue is ready" << endl;
         cout << "Length of 2nd queue: " << qLength2 << endl;
-        cout << "Front element of 2nd queue: " << q2->front() << endl;
-        cout << "Back element of 2nd queue: " << q2->back() << endl;
+        cout << "Front element of 2nd queue: " << q2->Front() << endl;
+        cout << "Back element of 2nd queue: " << q2->Back() << endl;
 
-        q1->concat(q2);
-        cout << "Front element of concat queue: " << q1->front() << endl;
-        cout << "Back element of concat queue: " << q1->back() << endl;
+        q1->Concat(q2);
+        cout << "Front element of concat queue: " << q1->Front() << endl;
+        cout << "Back element of concat queue: " << q1->Back() << endl;
         cout << " " << endl;
 
         int sLength1, sLength2;
@@ -6616,11 +6616,11 @@ int main(int argc, char** argv)
         {
             cout << "Enter the element of 1st stack: " << endl;
             cin >> element;
-            s1->push(element);
+            s1->Push(element);
         }
         cout << "1st stack is ready" << endl;
         cout << "Length of 1st stack: " << sLength1 << endl;
-        cout << "Top element of 1st stack: " << s1->top() << endl;
+        cout << "Top element of 1st stack: " << s1->Top() << endl;
         cout << " " << endl;
 
         cout << "Enter the length of 2nd stack: " << endl;
@@ -6630,14 +6630,14 @@ int main(int argc, char** argv)
         {
             cout << "Enter the element of 2nd stack: " << endl;
             cin >> element;
-            s2->push(element);
+            s2->Push(element);
         }
         cout << "2nd stack is ready" << endl;
         cout << "Length of 2nd stack: " << sLength2 << endl;
-        cout << "Top element of 2nd stack: " << s2->top() << endl;
+        cout << "Top element of 2nd stack: " << s2->Top() << endl;
 
-        s1->concat(s2);
-        cout << "Top element of concat stack: " << s1->top() << endl;
+        s1->Concat(s2);
+        cout << "Top element of concat stack: " << s1->Top() << endl;
         cout << " " << endl;
 
         int vLength1, vLength2, index;
@@ -6656,7 +6656,7 @@ int main(int argc, char** argv)
         cout << "Enter the index of coordinate of v1: " << endl;
         cin >> index;
         cout << "Corresponding coordinate of 1st vector: " << v1->GetCoordinate(index- 1) << endl;
-        cout << "Norm of 1st vector: " << v1->norm() << endl;
+        cout << "Norm of 1st vector: " << v1->Norm() << endl;
         cout << " " << endl;
 
         cout << "Enter the length of 2nd vector: " << endl;
@@ -6674,7 +6674,7 @@ int main(int argc, char** argv)
         cout << "Enter the index of coordinate of v2: " << endl;
         cin >> index;
         cout << "Corresponding coordinate of 2nd vector: " << v2->GetCoordinate(index - 1) << endl;
-        cout << "Norm of 2nd vector: " << v2->norm() << endl;
+        cout << "Norm of 2nd vector: " << v2->Norm() << endl;
         cout << " " << endl;
         if (vLength1 != vLength2)
         {

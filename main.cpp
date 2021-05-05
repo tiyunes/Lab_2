@@ -3,11 +3,8 @@
 #include <stdexcept>
 #include <cmath>
 #include <chrono>
-<<<<<<< HEAD
 #include "QUEUE.H"
-=======
 #include "QUEUE.h"
->>>>>>> 3ad575f (Added tests)
 #include "Stack.h"
 #include "doctest.h"
 #include "VECTOR.H"
@@ -18,75 +15,72 @@ TEST_CASE("testing Queue")
     try
     {
         Queue<int>* q1 = new Queue<int>();
-        q1->push(9);
-        q1->push(8);
-        q1->push(5);
-        CHECK(q1->front() == 9);
-        CHECK(q1->back() == 5);
-        CHECK(q1->size() == 3);
-        CHECK(q1->empty() == FALSE);
-        q1->pop();
-        CHECK(q1->size() == 2);
-        CHECK(q1->front() == 8);
-        CHECK(q1->back() == 5);
+        q1->Push(9);
+        q1->Push(8);
+        q1->Push(5);
+        CHECK(q1->Front() == 9);
+        CHECK(q1->Back() == 5);
+        CHECK(q1->Size() == 3);
+        CHECK(q1->Empty() == FALSE);
+        q1->Pop();
+        CHECK(q1->Size() == 2);
+        CHECK(q1->Front() == 8);
+        CHECK(q1->Back() == 5);
 
         int items[3] = {11, 12, 13};
         Queue<int>* q2 = new Queue<int>(items, 3);
-        CHECK(q2->size() == 3);
-        CHECK(q2->front() == 11);
-        CHECK(q2->back() == 13);
-        CHECK(q2->empty() == FALSE);
+        CHECK(q2->Size() == 3);
+        CHECK(q2->Front() == 11);
+        CHECK(q2->Back() == 13);
+        CHECK(q2->Empty() == FALSE);
 
-        q2->concat(q1);
-        CHECK(q2->size() == 5);
-        CHECK(q2->front() == 11);
-        CHECK(q2->back() == 5);
-        CHECK(q2->empty() == FALSE);
+        q2->Concat(q1);
+        CHECK(q2->Size() == 5);
+        CHECK(q2->Front() == 11);
+        CHECK(q2->Back() == 5);
+        CHECK(q2->Empty() == FALSE);
 
-<<<<<<< HEAD
-=======
         Queue<int>* q3 = new Queue<int>();
-        q3->push(10);
-        q3->push(20);
-        q3->push(30);
-        q3->push(40);
-        q3->push(50);
-        CHECK(q3->front() == 10);
-        CHECK(q3->back() == 50);
-        CHECK(q3->size() == 5);
-        CHECK(q3->empty() == FALSE);
-        q3->pop();
-        CHECK(q3->size() == 4);
-        CHECK(q3->front() == 20);
-        CHECK(q3->back() == 50);
+        q3->Push(10);
+        q3->Push(20);
+        q3->Push(30);
+        q3->Push(40);
+        q3->Push(50);
+        CHECK(q3->Front() == 10);
+        CHECK(q3->Back() == 50);
+        CHECK(q3->Size() == 5);
+        CHECK(q3->Empty() == FALSE);
+        q3->Pop();
+        CHECK(q3->Size() == 4);
+        CHECK(q3->Front() == 20);
+        CHECK(q3->Back() == 50);
 
         int elements1[5] = {7, 81, 12, 58, 93};
         Queue<int>* q4 = new Queue<int>(elements1, 5);
-        CHECK(q4->size() == 5);
-        CHECK(q4->front() == 7);
-        CHECK(q4->back() == 93);
-        CHECK(q4->empty() == FALSE);
+        CHECK(q4->Size() == 5);
+        CHECK(q4->Front() == 7);
+        CHECK(q4->Back() == 93);
+        CHECK(q4->Empty() == FALSE);
 
-        q4->concat(q1);
-        CHECK(q4->size() == 7);
-        CHECK(q4->front() == 7);
-        CHECK(q4->back() == 5);
-        CHECK(q4->empty() == FALSE);
+        q4->Concat(q1);
+        CHECK(q4->Size() == 7);
+        CHECK(q4->Front() == 7);
+        CHECK(q4->Back() == 5);
+        CHECK(q4->Empty() == FALSE);
 
         int elements2[6] = {6, 57, 22, 10, 71, 15};
         Queue<int>* q5 = new Queue<int>(elements2, 6);
-        CHECK(q5->size() == 6);
-        CHECK(q5->front() == 6);
-        CHECK(q5->back() == 15);
-        CHECK(q5->empty() == FALSE);
+        CHECK(q5->Size() == 6);
+        CHECK(q5->Front() == 6);
+        CHECK(q5->Back() == 15);
+        CHECK(q5->Empty() == FALSE);
 
-        q5->concat(q1);
-        CHECK(q5->size() == 8);
-        CHECK(q5->front() == 6);
-        CHECK(q5->back() == 5);
-        CHECK(q5->empty() == FALSE);
+        q5->Concat(q1);
+        CHECK(q5->Size() == 8);
+        CHECK(q5->Front() == 6);
+        CHECK(q5->Back() == 5);
+        CHECK(q5->Empty() == FALSE);
 
->>>>>>> 3ad575f (Added tests)
         int* itemsv = new int[1000];
         for (int i = 0; i < 1000; i++)
         {
@@ -107,63 +101,59 @@ TEST_CASE("testing Stack")
     try
     {
         Stack<int>* s1 = new Stack<int>();
-        s1->push(9);
-        s1->push(8);
-        s1->push(5);
-        CHECK(s1->top() == 5);
-        CHECK(s1->size() == 3);
-        CHECK(s1->empty() == FALSE);
-        s1->pop();
-        CHECK(s1->size() == 2);
-        CHECK(s1->top() == 8);
+        s1->Push(9);
+        s1->Push(8);
+        s1->Push(5);
+        CHECK(s1->Top() == 5);
+        CHECK(s1->Size() == 3);
+        CHECK(s1->Empty() == FALSE);
+        s1->Pop();
+        CHECK(s1->Size() == 2);
+        CHECK(s1->Top() == 8);
 
         int items3[3] = {11, 12, 13};
         Stack<int>* s2 = new Stack<int>(items3, 3);
-        CHECK(s2->size() == 3);
-        CHECK(s2->top() == 13);
-        CHECK(s2->empty() == FALSE);
-        s2->pop();
-        s2->pop();
-        s2->pop();
-        CHECK(s2->empty() == TRUE);
-        s2->push(11);
-        s2->push(12);
-        s2->push(13);
-        s2->concat(s1);
-        CHECK(s2->size() == 5);
-        CHECK(s2->top() == 9);
-        CHECK(s2->empty() == FALSE);
+        CHECK(s2->Size() == 3);
+        CHECK(s2->Top() == 13);
+        CHECK(s2->Empty() == FALSE);
+        s2->Pop();
+        s2->Pop();
+        s2->Pop();
+        CHECK(s2->Empty() == TRUE);
+        s2->Push(11);
+        s2->Push(12);
+        s2->Push(13);
+        s2->Concat(s1);
+        CHECK(s2->Size() == 5);
+        CHECK(s2->Top() == 9);
+        CHECK(s2->Empty() == FALSE);
 
-<<<<<<< HEAD
-=======
         Stack<int>* s3 = new Stack<int>();
-        s3->push(12);
-        s3->push(46);
-        s3->push(3);
-        s3->push(17);
-        s3->push(108);
-        CHECK(s3->top() == 108);
-        CHECK(s3->size() == 5);
-        CHECK(s3->empty() == FALSE);
-        s3->pop();
-        CHECK(s3->size() == 4);
-        CHECK(s3->top() == 17);
+        s3->Push(12);
+        s3->Push(46);
+        s3->Push(3);
+        s3->Push(17);
+        s3->Push(108);
+        CHECK(s3->Top() == 108);
+        CHECK(s3->Size() == 5);
+        CHECK(s3->Empty() == FALSE);
+        s3->Pop();
+        CHECK(s3->Size() == 4);
+        CHECK(s3->Top() == 17);
 
         int items4[4] = {3, 81, 67, 52};
         Stack<int>* s4 = new Stack<int>(items4, 4);
-        CHECK(s4->size() == 4);
-        CHECK(s4->top() == 52);
-        CHECK(s4->empty() == FALSE);
-        s4->pop();
-        s4->pop();
-        s4->pop();
-        CHECK(s2->empty() == FALSE);
-        s4->concat(s1);
-        CHECK(s4->size() == 3);
-        CHECK(s4->top() == 9);
-        CHECK(s4->empty() == FALSE);
-
->>>>>>> 3ad575f (Added tests)
+        CHECK(s4->Size() == 4);
+        CHECK(s4->Top() == 52);
+        CHECK(s4->Empty() == FALSE);
+        s4->Pop();
+        s4->Pop();
+        s4->Pop();
+        CHECK(s2->Empty() == FALSE);
+        s4->Concat(s1);
+        CHECK(s4->Size() == 3);
+        CHECK(s4->Top() == 9);
+        CHECK(s4->Empty() == FALSE);
     }
     catch(out_of_range &e)
     {
@@ -208,17 +198,16 @@ TEST_CASE("testing Vector")
         CHECK(v1->Mult(2)->GetCoordinate(3) == 4);
         CHECK(v1->Mult(2)->GetCoordinate(4) == 16);
 
-<<<<<<< HEAD
         CHECK(v2->ScalarProd(v1) == 102);
 
-        float items3[2] = {3, 4};
-        Vector<float>* v3 = new Vector<float>(items3, 2);
-        CHECK(v3->norm() == 5.0);
-=======
+        float items5[2] = {3, 4};
+        Vector<float>* v5 = new Vector<float>(items5, 2);
+        CHECK(v5->Norm() == 5.0);
+
         CHECK(v2->ScalarProd(v1)== 102);
 
-        int items3[5] = {11, 5, 4 , 3 , 10};
-        Vector<int>* v3 = new Vector<int>(items3, 5);
+        int items4[5] = {11, 5, 4 , 3 , 10};
+        Vector<int>* v3 = new Vector<int>(items4, 5);
         CHECK(v3->GetLength() == 5);
         CHECK(v3->GetCoordinate(0) == 11);
         CHECK(v3->GetCoordinate(1) == 5);
@@ -232,11 +221,9 @@ TEST_CASE("testing Vector")
         CHECK(v3->Sum(v2)->GetCoordinate(4) == 18);
         CHECK(v3->ScalarProd(v1)== 158);
 
-        float items4[2] = {3, 4};
-        Vector<float>* v4 = new Vector<float>(items4, 2);
-        CHECK(v4->norm() == 5.0);
-
->>>>>>> 3ad575f (Added tests)
+        float items6[2] = {3, 4};
+        Vector<float>* v6 = new Vector<float>(items6, 2);
+        CHECK(v6->Norm() == 5.0);
     }
     catch(out_of_range &e)
     {

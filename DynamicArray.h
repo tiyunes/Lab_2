@@ -179,6 +179,7 @@ void DynamicArray<T>::Reverse()
         this->values[this->GetSize() - i - 1] = buff;
     }
 }
+
 template<class T>
 DynamicArray<T>::~DynamicArray()
 {

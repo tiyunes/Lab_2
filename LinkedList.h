@@ -121,12 +121,20 @@ public:
         }
         return listIndex;
     }
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 9fcefc7 (Added tests)
     int GetLength()
     {
         return this->Size;
     }
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 9fcefc7 (Added tests)
     T& operator[](int index)
     {
         int c = 0;
@@ -190,7 +198,11 @@ public:
         }
         this->Size++;
     }
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 9fcefc7 (Added tests)
     void InsertAt(T item, int index)
     {
         if (index < 0 || index > this->Size)
@@ -217,7 +229,11 @@ public:
             this->Size++;
         }
     }
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 9fcefc7 (Added tests)
     void Reverse()
     {
         T buff;
@@ -231,7 +247,11 @@ public:
         this->first = l->first;
         this->last = l->last;
     }
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 9fcefc7 (Added tests)
     LinkedList<T>* Concat(LinkedList<T> *l)
     {
         Node<T>* n = this->first;
@@ -243,7 +263,11 @@ public:
         }
         return concatList;
     }
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 9fcefc7 (Added tests)
     ~LinkedList()
     {
      for (int i = 0; i < this->Size; i++)
