@@ -78,6 +78,7 @@ public:
         Node<T>* l = this->last;
         return l->value;
     }
+    
     T Get(int index)
     {
         if (index < 0 || index > this->Size)
@@ -120,10 +121,12 @@ public:
         }
         return listIndex;
     }
+    
     int GetLength()
     {
         return this->Size;
     }
+    
     T& operator[](int index)
     {
         int c = 0;
@@ -187,6 +190,7 @@ public:
         }
         this->Size++;
     }
+    
     void InsertAt(T item, int index)
     {
         if (index < 0 || index > this->Size)
@@ -213,6 +217,7 @@ public:
             this->Size++;
         }
     }
+    
     void Reverse()
     {
         T buff;
@@ -226,6 +231,7 @@ public:
         this->first = l->first;
         this->last = l->last;
     }
+    
     LinkedList<T>* Concat(LinkedList<T> *l)
     {
         Node<T>* n = this->first;
@@ -237,6 +243,7 @@ public:
         }
         return concatList;
     }
+    
     ~LinkedList()
     {
      for (int i = 0; i < this->Size; i++)
