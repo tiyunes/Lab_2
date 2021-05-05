@@ -53,6 +53,7 @@ public:
             return sumV;
         }
     }
+    
     Vector<T>* Mult(int number) //multiplication by scalar - 0.008 s (List) and 0.137 s (Array) for vector of 1000 elementss
     {
         Vector<T>* mult = new Vector<T>();
