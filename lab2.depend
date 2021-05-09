@@ -1,42 +1,45 @@
 # depslib dependency file v1.0
-1620196324 source:d:\documents\yandex d\documents\c++files\lab_2\lab2\main.cpp
+1620419360 source:d:\documents\yandex d\documents\c++files\lab_2\lab2\main.cpp
 	<iostream>
 	<stdexcept>
 	<cmath>
 	<chrono>
+	<complex>
+	"QUEUE.H"
 	"QUEUE.h"
 	"Stack.h"
 	"doctest.h"
 	"VECTOR.H"
 
-1620147014 d:\documents\yandex d\documents\c++files\lab_2\lab2\queue.h
+1620417658 d:\documents\yandex d\documents\c++files\lab_2\lab2\queue.h
 	"ArraySequence.h"
 	"LinkedListSequence.h"
 
-1620193986 d:\documents\yandex d\documents\c++files\lab_2\lab2\arraysequence.h
+1620198002 d:\documents\yandex d\documents\c++files\lab_2\lab2\arraysequence.h
 	"SEQUENCE.H"
 	"DynamicArray.h"
 
-1620147014 d:\documents\yandex d\documents\c++files\lab_2\lab2\sequence.h
+1620198002 d:\documents\yandex d\documents\c++files\lab_2\lab2\sequence.h
 	"LinkedList.h"
 	"DynamicArray.h"
 
-1620194022 d:\documents\yandex d\documents\c++files\lab_2\lab2\linkedlist.h
+1620413058 d:\documents\yandex d\documents\c++files\lab_2\lab2\linkedlist.h
 	<stdexcept>
 	<iostream>
 
-1620147014 d:\documents\yandex d\documents\c++files\lab_2\lab2\dynamicarray.h
+1620201940 d:\documents\yandex d\documents\c++files\lab_2\lab2\dynamicarray.h
 
-1620194052 d:\documents\yandex d\documents\c++files\lab_2\lab2\linkedlistsequence.h
+1620415276 d:\documents\yandex d\documents\c++files\lab_2\lab2\linkedlistsequence.h
 	"SEQUENCE.H"
 	"LinkedList.h"
 
-1620194106 d:\documents\yandex d\documents\c++files\lab_2\lab2\stack.h
+1620417692 d:\documents\yandex d\documents\c++files\lab_2\lab2\stack.h
 	"ArraySequence.h"
 	"LinkedListSequence.h"
 
-1620197024 d:\documents\yandex d\documents\c++files\lab_2\lab2\doctest.h
+1620417914 d:\documents\yandex d\documents\c++files\lab_2\lab2\doctest.h
 	"VECTOR.H"
+	<complex>
 	<signal.h>
 	<iosfwd>
 	<cstddef>
@@ -79,7 +82,7 @@
 	<sys/time.h>
 	<unistd.h>
 
-1620146692 d:\documents\yandex d\documents\c++files\lab_2\lab2\vector.h
+1620417586 d:\documents\yandex d\documents\c++files\lab_2\lab2\vector.h
 	"ArraySequence.h"
 	"LinkedListSequence.h"
 	<cmath>

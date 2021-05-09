@@ -31,8 +31,9 @@ public:
 
     LinkedList(const LinkedList<T>& l)
     {
+        T item;
         Size = l.Size;
-        first = new Node<T>(0, nullptr);
+        first = new Node<T>(item, nullptr);
         first = l.first;
         last = l.last;
     }
@@ -50,12 +51,13 @@ public:
 
     LinkedList(int c)
     {
+        T item;
         this->first = nullptr;
         this->last = nullptr;
         this->Size = 0;
         for (int i = 0; i < c; i++)
         {
-            this->Append(0);
+            this->Append(item);
         }
     }
 
@@ -78,7 +80,7 @@ public:
         Node<T>* l = this->last;
         return l->value;
     }
-    
+
     T Get(int index)
     {
         if (index < 0 || index > this->Size)
@@ -95,7 +97,8 @@ public:
 
     void Pop()
     {
-        Node<T> *buff = new Node<T>(0, nullptr);
+        T item;
+        Node<T> *buff = new Node<T>(item, nullptr);
         buff = this->first;
         this->first = this->first->next;
         delete buff;
@@ -121,20 +124,12 @@ public:
         }
         return listIndex;
     }
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 9fcefc7 (Added tests)
     int GetLength()
     {
         return this->Size;
     }
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 9fcefc7 (Added tests)
     T& operator[](int index)
     {
         int c = 0;
@@ -198,11 +193,7 @@ public:
         }
         this->Size++;
     }
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 9fcefc7 (Added tests)
     void InsertAt(T item, int index)
     {
         if (index < 0 || index > this->Size)
@@ -229,11 +220,7 @@ public:
             this->Size++;
         }
     }
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 9fcefc7 (Added tests)
     void Reverse()
     {
         T buff;
@@ -247,11 +234,7 @@ public:
         this->first = l->first;
         this->last = l->last;
     }
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 9fcefc7 (Added tests)
     LinkedList<T>* Concat(LinkedList<T> *l)
     {
         Node<T>* n = this->first;
@@ -263,11 +246,7 @@ public:
         }
         return concatList;
     }
-<<<<<<< HEAD
-    
-=======
 
->>>>>>> 9fcefc7 (Added tests)
     ~LinkedList()
     {
      for (int i = 0; i < this->Size; i++)
