@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1620419360 source:d:\documents\yandex d\documents\c++files\lab_2\lab2\main.cpp
+1620894256 source:d:\documents\yandex d\documents\c++files\lab_2\lab2\main.cpp
 	<iostream>
 	<stdexcept>
 	<cmath>
@@ -10,6 +10,8 @@
 	"Stack.h"
 	"doctest.h"
 	"VECTOR.H"
+	"STUDENTS.H"
+	"TEACHER.H"
 
 1620417658 d:\documents\yandex d\documents\c++files\lab_2\lab2\queue.h
 	"ArraySequence.h"
@@ -23,7 +25,7 @@
 	"LinkedList.h"
 	"DynamicArray.h"
 
-1620413058 d:\documents\yandex d\documents\c++files\lab_2\lab2\linkedlist.h
+1620555508 d:\documents\yandex d\documents\c++files\lab_2\lab2\linkedlist.h
 	<stdexcept>
 	<iostream>
 
@@ -37,7 +39,7 @@
 	"ArraySequence.h"
 	"LinkedListSequence.h"
 
-1620417914 d:\documents\yandex d\documents\c++files\lab_2\lab2\doctest.h
+1620894658 d:\documents\yandex d\documents\c++files\lab_2\lab2\doctest.h
 	"VECTOR.H"
 	<complex>
 	<signal.h>
@@ -86,4 +88,9 @@
 	"ArraySequence.h"
 	"LinkedListSequence.h"
 	<cmath>
+
+1620556630 d:\documents\yandex d\documents\c++files\lab_2\lab2\students.h
+	<string>
+
+1620556892 d:\documents\yandex d\documents\c++files\lab_2\lab2\teacher.h
 

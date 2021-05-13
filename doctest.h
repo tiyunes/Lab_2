@@ -6570,6 +6570,18 @@ namespace detail {
 
 #ifdef DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
 DOCTEST_MSVC_SUPPRESS_WARNING_WITH_PUSH(4007) // 'function' : must be 'attribute' - see issue #182
+int sum(int a, int b)
+{
+    return a + b;
+}
+int mult(int a, int b)
+{
+    return a*b;
+}
+int subtraction(int a, int b)
+{
+    return a - b;
+}
 int main(int argc, char** argv)
 {
     try
@@ -6688,7 +6700,6 @@ int main(int argc, char** argv)
             cout << "Corresponding coordinate of sum of the vectors: " << v1->Sum(v2)->GetCoordinate(index - 1) << endl;
             cout << "Scalar product (v1, v2): " << v1->ScalarProd(v2) << endl;
         }
-
     }
     catch(out_of_range &e)
     {

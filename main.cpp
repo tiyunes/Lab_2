@@ -100,7 +100,7 @@ TEST_CASE("testing Queue")
     }
 }
 
-TEST_CASE("testing queue (complex, float, student, teacher)")
+TEST_CASE("testing queue (complex, float, student, teacher, pointers)")
 {
     try
     {
@@ -161,6 +161,20 @@ TEST_CASE("testing queue (complex, float, student, teacher)")
         CHECK(q4->Size() == 2);
         CHECK(q4->Front() == t1);
         CHECK(q4->Back() == t2);
+
+        int(*p1)(int a, int b);
+        int(*p2)(int a, int b);
+        int(*p3)(int a, int b);
+        p1 = sum;
+        p2 = mult;
+        p3 = subtraction;
+        Queue<int(*)(int, int)>* q5 = new Queue<int(*)(int, int)>();
+        q5->Push(p1);
+        q5->Push(p2);
+        q5->Push(p3);
+        CHECK(q5->Size() == 3);
+        CHECK(q5->Front() == sum);
+        CHECK(q5->Back() == subtraction);
     }
     catch(out_of_range &e)
     {
@@ -233,7 +247,7 @@ TEST_CASE("testing Stack")
     }
 }
 
-TEST_CASE("testing stack (complex, float, student, teacher)")
+TEST_CASE("testing stack (complex, float, student, teacher, pointers)")
 {
     try
     {
@@ -290,6 +304,19 @@ TEST_CASE("testing stack (complex, float, student, teacher)")
         stack4->Push(t2);
         CHECK(stack4->Size() == 2);
         CHECK(stack4->Top() == t2);
+
+        int(*p1)(int a, int b);
+        int(*p2)(int a, int b);
+        int(*p3)(int a, int b);
+        p1 = sum;
+        p2 = mult;
+        p3 = subtraction;
+        Stack<int(*)(int, int)>* stack5 = new Stack<int(*)(int, int)>();
+        stack5->Push(p1);
+        stack5->Push(p2);
+        stack5->Push(p3);
+        CHECK(stack5->Size() == 3);
+        CHECK(stack5->Top() == subtraction);
     }
     catch(out_of_range &e)
     {
