@@ -82,16 +82,12 @@ public:
         }
     }
 
-    T Norm()
+    float Norm()
     {
-        T normV = 0;
-        for (int i = 0; i < this->GetLength(); i++)
-        {
-            normV += (this->GetCoordinate(i))*(this->GetCoordinate(i));
-        }
+        float normV = 0.0;
+        normV = float(this->ScalarProd(this));
         return sqrt(normV);
     }
-
 protected:
 
 private:

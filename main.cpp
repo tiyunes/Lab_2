@@ -367,8 +367,6 @@ TEST_CASE("testing Vector")
         Vector<float>* v5 = new Vector<float>(items5, 2);
         CHECK(v5->Norm() == 5.0);
 
-        CHECK(v2->ScalarProd(v1)== 102);
-
         int items4[5] = {11, 5, 4 , 3 , 10};
         Vector<int>* v3 = new Vector<int>(items4, 5);
         CHECK(v3->GetLength() == 5);
